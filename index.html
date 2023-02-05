@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <title>FGX Global Deal Making Wizard</title>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <img src="/images/FGX_Logo.svg">
+        </div>
+    </nav>
+    <section class="main">
+
+        <section class="app-input container">
+            <div class="app-input-title">
+                <small class="link-color">Tools</small>
+                <h1>Global ROM Wizard</h1>
+                <p>This sales support tool provies you with quick ROM (rough order of magniuted) quotes. You can use the ouput from this tool to quote out your client's international opportunities. If you need an actual quote, please request a <span class="link-color">Formal Quote</span>.</p>
+            </div>
+            <div class="app-input-body">
+                <div class="app-input-calculator">
+                    <div class="app-input-calculator-field-one">
+                        <h3>Where is the shipment originating from?</h3>
+                        <div class="app-input-calculator-dropdown">
+                            <select id="dropdown">
+                                <option value="1">I'll drop-ship the equipment to FGX</option>
+                                <option value="2">I'll need FGX to pickup the shipment</option>
+                            </select>
+                        </div>
+                        <div class="app-input-calculator-dependency">
+                            <div id="option1" style="display: none;">
+                                
+                            </div>
+                            <div id="option2" style="display: none;">
+                                <select>
+                                    <option value="" disabled selected>Where should we pickup the shipment?</option>
+                                    <option value="AL">Alabama</option>
+                                    <option value="AK">Alaska</option>
+                                    <option value="AZ">Arizona</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div><!--App Input Caclulator Field One-->
+                    <div class="app-input-calculator-field-two">
+                        <h3>Which country is this shipment going to?</h3>
+                        <div class="dropdown-container">
+                            <select class="dropdown-two">
+                              <option value="">Select a country</option>
+                              <option value="" disabled selected>Choose a country from this dropdown</option>
+                              <option value="brazil">Brazil</option>
+                              <option value="northkorea">North Korea</option>
+                            </select>
+                          </div>
+                          <div class="result-container">
+                            <div id="brazil" style="display: none;">
+                                <p>Brazil is a supported country.</p>
+                            </div>
+                            <div id="northkorea" style="display: none;">
+                                <p>North Korea is not a supported country.</p>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="app-input-bom">
+                        <h3>What are you looking to ship?</h3>
+                        <div style="border-top-left-radius: 4px; border-top-right-radius: 4px; overflow: hidden;">
+                            <table id="myTable">
+                                <tr>
+                                <th>Product Type</th>
+                                <th>Unit Value</th>
+                                <th>Quantity</th>
+                                <th>Condition</th>
+                                <th></th>
+                                </tr>
+                                <tr>
+                                <td>
+                                    <select>
+                                    <option>Networking Equipment (Routers, Switches)</option>
+                                    <option>Storage Equipment (Servers, Arrays)</option>
+                                    <option>End User Tech (Laptops, Desktops)</option>
+                                    <option>Accessories (Cables, SFPs)</option>
+                                    </select>
+                                </td>
+                                <td><input type="number" placeholder="$500.00"/></td>
+                                <td><input type="number" placeholder="3"/></td>
+                                <td>
+                                    <select>
+                                    <option>New</option>
+                                    <option>Used</option>
+                                    </select>
+                                </td>
+                                <td><button onclick="deleteRow(this)">Delete Row</button></td>
+                                </tr>
+                            </table>
+                            </div>
+                          <button class="add-row" onclick="addRow()">+</button>
+                    </div><!--BOM Input-->
+                    <hr />
+                    <button class="app-button" id="reveal-button">Generate the ROM simulation</button>
+                </div><!--App Input Calculator-->
+                <div class="app-input-history">
+                    <h3>ROM Simulation History</h3>
+                    <div class="app-input-history-feed">
+                        <div class="app-input-history-single">
+                            <p><strong>Brazil</strong></p>
+                            <small>Total Shipment Value: $734,421.78</small>
+                            <small>Origin: New York</small>
+                            <small>Destination: Brazil</small>
+                        </div>
+                        <div class="app-input-history-single">
+                            <p><strong>North Korea</strong></p>
+                            <small>Total Shipment Value: $12,319.33</small>
+                            <small>Origin: Drop-ship to FGX</small>
+                            <small>Destination: North Korea</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <div class="app-output container" id="hidden-div" style="display:none;">
+            <div class="app-output-title">
+                <h2>ROM Simulation Results</h2>
+            </div>
+            <div class="app-output-metadata">
+                <p><strong>Destination:</strong> <br> Brazil</p>
+                <p><strong>Total Shipment Value:</strong> <br> $734,421.78</p>
+                <p><strong>Origin:</strong> <br> New York</p>
+            </div>
+            <div class="app-block app-output-costs">
+                <div class="app-block-title">
+                    <h3>High Level Costs</h3>
+                    <small>These are the main cost categories for this shipment.</small>
+                </div>
+                <div class="app-block-body">
+                    <p><strong>All-in International Logistics:</strong> $28,031.84</p>
+                    <p><strong>Import Duties and Taxes:</strong> $1,491.21</p>
+                    <p><strong>Compliance, Permits, Licenses:</strong> $448.01</p>
+                    <p><strong>Total:</strong> $29,971.06</p>
+                    <hr />
+                    <p class="link-color">Get the full breakdown by line item in PDF.</p>
+                </div>
+          </div>
+          <div class="app-block app-faq">
+            <div class="app-block-title">
+                <h3>Important FAQ Before Quoting Your Client</h3>
+                <small>Before you quote your client, there are a few things you should know.</small>
+            </div>
+            <div class="app-block-body">
+                <div class="faq-container">
+                    <div class="faq-item">
+                      <h3 class="faq-question">If my client approves this ROM quote, will the final costs change?</h3>
+                      <div class="faq-answer">
+                        <small>Yes, but the difference between the ROM quote and actual formal quote is < 5%.</small>
+                      </div>
+                    </div>
+                    <div class="faq-item">
+                      <h3 class="faq-question">What else do I need to let my client know when I send them this ROM quote?</h3>
+                      <div class="faq-answer">
+                        <small>That the final costs and timeline will only be respected if the details of the live shipment don't change.</small>
+                      </div>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">My customer wants to go ahead. How do I get an actual formal quote?</h3>
+                        <div class="faq-answer">
+                          <small>Please reach out to our sales team to make your account an active sales account.</small>
+                        </div>
+                      </div>                    
+                    <!-- Add more FAQ items here -->
+                  </div>
+            </div>
+          </div><!--App FAQ-->
+
+          <div class="app-block sales-briefs">
+            <div class="app-block-title">
+                <h3>Sales Brief</h3>
+                <small>A quick synonpsis on the general process and requirements of this origin-destination-BOM triangulation.</small>
+            </div>
+            <div class="app-block-body">
+                <p>FGX takes away the complexity of your international IT shipments by fully managing every single step of the process. Our team keeps you up-to-date on your shipments so that you can accurately plan for your gear to be installed and deployed.</p>
+            </div>
+          </div>
+
+          <div class="app-block sales-caveats">
+            <div class="app-block-title">
+                <h3>Sales Caveats</h3>
+                <small>Specific notes for this origin-destination-BOM triangulation.</small>
+            </div>
+            <div class="app-block-body">
+                <small>• Requires a permit and license prior to import.</small>
+                <small>• Costs can be further reduced if they have a business entity in the country.</small>
+                <small>• Used goods are not permitted for use within this country.</small>
+                <small>• Only a simple LOA needs to be completed for export.</small>
+            </div>
+          </div>
+
+          <div class="app-block timelines">
+            <div class="app-block-title">
+                <h3>Timelines</h3>
+                <small>Specific notes for this origin-destination-BOM triangulation.</small>
+            </div>
+            <div class="app-block-body">
+                <small class="step-one">Pre-Customs Validation: 2-3 Working Days</small>
+                <small class="step-two">Manifest & Shipment Preparation: 1 Working Day</small>
+                <small class="step-three">Direct Air-Freight: 2 Working Days</small>
+                <small class="step-four">Customs Clearance & Last Mile Delivery: 1 Working Day</small>
+            </div>
+          </div>
+        </div><!--App Output-->
+
+        <div class="cta-banner container">
+            <div>
+                <h2>Start closing international deals by becoming an FGX Partner today.</h2>
+                <p>Get full access to our capabilities, tools, and sales support by talking to our sales team.</p>
+                <button class="app-button">Talk to sales</button>
+            </div>
+        </div>
+
+    </section>
+</body>
+<script src="app.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.faq-question').click(function() {
+        $(this).parent().toggleClass('active');
+        var answer = $(this).siblings('.faq-answer');
+        if (answer.css('max-height') == '0px') {
+            $('html, body').animate({
+            scrollTop: $(this).offset().top - 20
+            }, 500);
+        }
+        });
+    });
+</script>
+</html>
