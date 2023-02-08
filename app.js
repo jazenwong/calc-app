@@ -40,12 +40,14 @@ var cell2 = row.insertCell(1);
 var cell3 = row.insertCell(2);
 var cell4 = row.insertCell(3);
 var cell5 = row.insertCell(4);
+var cell6 = row.insertCell(5);
 
 cell1.innerHTML = "<select><option>Networking Equipment (Routers, Switches)</option><option>Storage Equipment (Servers, Arrays)</option><option>End User Tech (Laptops, Desktops)</option><optionAccessories (Cables, SFPs)</option></select>";
-cell2.innerHTML = "<input type='number'placeholder='$500.00'/>";
-cell3.innerHTML = "<input type='number' placeholder='3' />";
-cell4.innerHTML = "<select><option>New</option><option>Used</option></select>";
-cell5.innerHTML = "<button onclick='deleteRow(this)'>Delete Row</button>";
+cell2.innerHTML = "<select><option>1RU</option><option>2RU</option><option>3RU</option></select>";
+cell3.innerHTML = "<input type='number'placeholder='$500.00'/>";
+cell4.innerHTML = "<input type='number' placeholder='3' />";
+cell5.innerHTML = "<select><option>New</option><option>Used</option></select>";
+cell6.innerHTML = "<button onclick='deleteRow(this)'>Delete Row</button>";
 }
 
 function deleteRow(btn) {
@@ -62,3 +64,6 @@ revealButton.addEventListener("click", function() {
   hiddenDiv.scrollIntoView({ behavior: "smooth" });
 });
 
+window.addEventListener('scroll', function(event) {
+  event.preventDefault();
+});
