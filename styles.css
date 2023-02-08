@@ -289,7 +289,8 @@ nav img {
 }
 
 .app-input-calculator {
-    grid-row: 3/4;
+    /* grid-row: 3/4; */
+    grid-row: 2/3;
     grid-column: 1/-1;
     border: var(--app-border);
     padding: 40px 20px;
@@ -602,8 +603,10 @@ hr {
 }
 
 .app-input-calculator-field-one h3 ,
-.app-input-calculator-field-two h3 {
+.app-input-calculator-field-two h3 ,
+.app-input-bom h3 {
     grid-column: 1/-1;
+    font-size: var(--font-size-base);
 }
 
 .app-input-value-points {
