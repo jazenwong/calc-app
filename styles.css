@@ -83,7 +83,10 @@ input {
     background-position: right 0.75rem top 50%;
     background-size: 0.65rem auto;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    width: 100%;
+}
+
+.signup-container input {
+    width: 100%;   
 }
 
 option {
