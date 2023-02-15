@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>FGX Partners Demo - Signup</title>
+</head>
+<body class="padding-bottom-zero offwhite-background">
+    <div class="signup-container">
+        <section class="signup-left">
+            <div class="signup-left-header">
+                <img src="https://fgx.com/wp-content/uploads/2021/10/fgx-site-logo.svg">
+                <h1>Ship your client's hardware to any country on the planet.</h1>
+                <p>The FGX Partners solution equips you with the tools and capability to sell and fulfill international hardware deals quicker and more cost-effective than your competitors can.</p>
+                <p>Get access to our Global IT Calculator today. Our calculator enables you to quote your clients opportunities in the most cost effective way possible, with high accuracy.</p>
+            </div>
+            <p class="trusted">Trusted by:</p>
+            <div>
+            <div class="owl-carousel">
+                <div class="item"><img src="/logos/accenture-logo.svg"></div>
+                <div class="item"><img src="/logos/akamai-logo.svg"></div>
+                <div class="item"><img src="/logos/deloitte-logo.svg"></div>
+                <div class="item"><img src="/logos/digicert-logo.svg"></div>
+                <div class="item"><img src="/logos/disney-logo.svg"></div>
+                <div class="item"><img src="/logos/insight-logo.svg"></div>
+            </div>
+        </div>
+        </section>
+        <section class="signup-right">
+            <div class="signup-right-form">
+                <div class="signup-right-form-first-name">
+                    <label>First name*</label>
+                    <input placeholder="First name">
+                </div>
+                <div class="signup-right-form-last-name">
+                    <label>Last name*</label>
+                    <input placeholder="Last name">
+                </div>
+                <div class="signup-right-form-email">
+                    <label>Company email*</label>
+                    <input placeholder="Company email">
+                </div>
+                <div class="signup-right-form-choose">
+                    <label>What kind of experience do you have with providing international hardware solutions?*</label>
+                    <div class="dropdown-container">
+                        <select class="dropdown-two">
+                            <option value="" disabled selected>Choose an option from this dropdown</option>
+                            <option value="none">No experience at all</option>
+                            <option value="some">Some experience (partnering in-market, shipping)</option>
+                        </select>
+                    </div>
+                </div>  
+                <button>Get calculator access</button>          
+            </div>
+        </section>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</body>
+
+
+<script>
+    $(document).ready(function(){
+      $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:false,
+        autoplay:true,
+        autoplayTimeout:2000,
+        autoplayHoverPause:true,
+        slideSpeed: 1000, // sets the slide animation speed
+        paginationSpeed: 1000, // sets the pagination animation speed
+        responsive:{
+            0:{
+                items:2
+            },
+            600:{
+                items:3
+            },
+            1100:{
+                items:4
+            }
+        }
+      });
+    });
+</script>
+
+</html>
