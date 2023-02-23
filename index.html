@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-    <title>FGX Global Deal Making Wizard</title>
+    <title>FGX Shipment Simulator</title>
 </head>
 <body>
     <nav>
@@ -19,17 +19,9 @@
         <section class="app-input container">
             <div class="app-input-title">
                 <small class="link-color">Tools</small>
-                <h1>Global ROM Wizard</h1>
-                <p>This sales support tool provies you with quick ROM (rough order of magniuted) quotes. You can use the ouput from this tool to quote out your client's international opportunities. If you need an actual quote, please request a <span class="link-color">Formal Quote</span>.</p>
+                <h1>FGX Shipment Simulator</h1>
+                <p>This advanced tool allows you to simulate shipping scenarios and estimate costs and transit times across various countries, giving you a deep understanding of FGX's global IT logistics capabilities and how they can best support your future international opportunities. For a binding quote, please request a <span class="link-color">Formal Quote</span>.</p>
             </div>
-            <!-- <div class="app-input-value">
-                <div class="app-input-value-points">
-                    <small class="checkbox">Checks for VAT reclamation opportunities to lower cost.</small>
-                    <small class="checkbox">Checks for opportunities to remove import fees.</small>
-                    <small class="checkbox">Takes into account all costs, not just logistical costs.</small>
-                    <small class="checkbox">FGX manages all shipments door-to-door.</small>
-                </div>
-            </div> -->
             <div class="app-input-calculator">
                 <div class="app-input-calculator-field-one">
                     <h3>Where is the shipment originating from?</h3>
@@ -104,13 +96,13 @@
                         <button class="add-row" onclick="addRow()">+</button>
                 </div><!--BOM Input-->
                 <hr />
-                <button class="app-button" id="reveal-button">Generate the ROM simulation</button>
+                <button class="app-button" id="reveal-button">Run the simulation</button>
             </div><!--App Input Calculator-->
         </section>
         <section class="app-output-container container">
         <div class="app-output container" id="hidden-div" style="display:none;">
             <div class="app-output-title">
-                <h2>ROM Simulation Results</h2>
+                <h2>Shipment Simulation Results</h2>
             </div>
             <div class="app-output-metadata">
                 <p><strong>Origin:</strong> <br> New York</p>
@@ -136,7 +128,7 @@
                     <h4><span class="link-color">Your Cost:</span> $14,041.92</h4>
                     <hr />
                     <h4><span class="link-color">Your Customer's All-In Cost:</span> $44,012.98</h4>
-                    <small class="cost-cta">Get the full breakdown by line item in PDF.</small>
+                    <small class="cost-cta">Get access to real quoting by talking to our sales team.</small>
                 </div>
           </div>
           <div class="app-block app-faq">
@@ -217,6 +209,39 @@
                 </div>
             </div>
           </div>
+
+          <div class="app-block app-faq-bottom">
+            <div class="app-block-title">
+                <img src="./images/explain.svg">
+                <h3>Shipment FAQ</h3>
+                <small>Before you quote your client, there are a few things you should know.</small>
+            </div>
+            <div class="app-block-body">
+                <div class="faq-container">
+                    <div class="faq-item">
+                      <h3 class="faq-question">If my client approves this ROM quote, will the final costs change?</h3>
+                      <div class="faq-answer">
+                        <small>Yes, but the difference between the ROM quote and actual formal quote is < 5%.</small>
+                      </div>
+                    </div>
+                    <div class="faq-item">
+                      <h3 class="faq-question">What else do I need to let my client know when I send them this ROM quote?</h3>
+                      <div class="faq-answer">
+                        <small>That the final costs and timeline will only be respected if the details of the live shipment don't change.</small>
+                      </div>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">My customer wants to go ahead. How do I get an actual formal quote?</h3>
+                        <div class="faq-answer">
+                          <small>Please reach out to our sales team to make your account an active sales account.</small>
+                        </div>
+                      </div>                    
+                    <!-- Add more FAQ items here -->
+                  </div>
+            </div>
+          </div>
+          
+
         </div><!--App Output-->
         </section>
         <div class="cta-banner container">

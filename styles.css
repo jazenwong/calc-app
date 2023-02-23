@@ -422,11 +422,13 @@ nav img {
     margin-top: 0px;
 }
 
-.app-faq .faq-question {
+.app-faq .faq-question ,
+.app-faq-bottom .faq-question {
     margin-bottom: 20px;
 }
 
-.app-faq .faq-item.active .faq-answer {
+.app-faq .faq-item.active .faq-answer ,
+.app-faq-bottom .faq-item.active .faq-answer {
     margin-bottom: 20px;
 }
 
@@ -519,17 +521,34 @@ nav img {
 }
 
 /* Signup */
+.signup-container {
+    background: white;
+}
+
+.signup-body::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    filter: brightness(0.7);
+}
+
 .signup-left-header img {
     width: 100px;
     margin-bottom: 40px;
 }
 
-.signup-container h1 {
-    font-size: var(--font-size-xl);
+.signup-left-header a {
+    color: var(--fgx-green);
 }
 
-.offwhite-background {
-    /* background-color: var(--off-white); */
+.signup-container h1 {
+    font-size: var(--font-size-xl);
 }
 
 .signup-container section {
@@ -655,14 +674,27 @@ nav {
 }
 
 @media screen and (min-width: 1100px) {
+
+.signup-body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-image: url(./images/shipment_simulator_blur_l.png);
+}
+
+
 .signup-container {
     display: grid;
     grid-template-columns: repeat(2,1fr);
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
-    height: 100vh;
     grid-template-rows: 1fr;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .signup-left {
@@ -833,6 +865,10 @@ hr {
     grid-row: 3/4;
 }
 
+.app-faq-bottom {
+    grid-column: 1/-1;
+}
+
 /* CTA */
 
 .cta-banner {
@@ -857,6 +893,10 @@ hr {
 
 @media screen and (min-width: 1600px) {
     
+.signup-body {
+    background-image: url(./images/shipment_simulator_blur_xxl.png);
+}
+
 .container {
     width: 1300px;
     margin-left: auto;
@@ -865,6 +905,7 @@ hr {
 
 .signup-container {
     width: 1400px;
+    padding: 60px;
 }
 
 }
